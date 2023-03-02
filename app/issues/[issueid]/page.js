@@ -12,9 +12,6 @@ async function IssueDetailsPage({ params }) {
   const issue = await prisma.issue.findFirst({
     where: { id: +params.issueid },
   });
-  if (!issue) {
-    throw new Error("Issue not found!");
-  }
   return <IssueDetails issue={issue} />;
 }
 
